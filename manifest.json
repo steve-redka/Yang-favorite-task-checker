@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Yang favorite task checker",
+    "version": "1.0",
+    "description": "Alerts you when favorite tasks appear on work page.",
+    "permissions": ["storage", "scripting", "tabs"],
+    "host_permissions": ["<all_urls>"],
+    "icons": { "16": "yang.png",
+           "48": "yang.png",
+          "128": "yang.png" },
+    "action": {
+      "default_popup": "popup.html",
+      "default_title": "Yang favorite task checker"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://yang.yandex-team.ru/"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["icq.mp3"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+
+  }
