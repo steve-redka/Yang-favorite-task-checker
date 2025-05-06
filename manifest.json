@@ -3,7 +3,7 @@
     "name": "Yang favorite task checker",
     "version": "1.0",
     "description": "Alerts you when favorite tasks appear on work page.",
-    "permissions": ["storage", "scripting", "tabs"],
+    "permissions": ["storage", "scripting", "tabs", "notifications", "webNavigation"],
     "host_permissions": ["<all_urls>"],
     "icons": { "16": "yang.png",
            "48": "yang.png",
