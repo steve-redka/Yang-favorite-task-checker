@@ -42,7 +42,14 @@ chrome.storage.sync.get(["whiteList"], (result) => {
         observer.disconnect(); // Stop watching further changes
       } else {
         console.log("No matching tasks found. Will retry in 5 minutes.");
-        setTimeout(() => location.reload(), 5 * 60 * 1000);
+        setTimeout(() => {
+            // Check location.href right before reloading
+            if (window.location.href === "https://yang.yandex-team.ru/?activeTab=all") {
+                location.reload();
+            } else {
+                console.log("Not on the main page, skipping reload.");
+            }
+        }, 5 * 60 * 1000);
       }
     });
   
